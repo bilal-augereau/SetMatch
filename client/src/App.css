@@ -4,29 +4,70 @@
   box-sizing: border-box;
 }
 
-body {
+html, body {
+  height: 100%; /* Assure que body occupe toute la hauteur de la page */
   font-family: "Lato", sans-serif;
+  background-color: #EAEAEA;
   font-size: 16px;
   line-height: 1.7;
-  color: #eee;
+  color: black;
   margin: 0;
+
+  /* Image de fond */
+  background-image: url("./assets/images/backgroundball.jpg");
+  background-size: cover; /* Couvre tout l'écran */
+  background-repeat: no-repeat;
+  background-position: center; /* Centre l'image */
+}
+
+body::before {
+  content: "";
+  position: fixed; /* Assure que le pseudo-élément couvre toute la fenêtre */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Couleur noire avec transparence */
+  z-index: -1; /* Place l'overlay derrière le contenu */
+}
+
+.header {
+    background-color: #A8333A;
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+}
+
+button {
+    background-color: #053f2e;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:disabled {
+  background-color: #A7C9BA;
+  color: #FFFFFF; 
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.pointdisplay {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 25rem;
+}
+
+#cal-color {
+    background-color: darkblue;
 }
 
 #root {
-  height: 100vh;
-  background-image: url("./assets/images/background.webp");
-  background-size: cover;
-  background-position: top;
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  grid-template-rows: 1fr;
-  align-content: start;
   padding: 1rem;
-}
-
-header {
-  grid-column: 1 / 2;
-  grid-row: 1;
 }
 
 .logo {

@@ -1,0 +1,46 @@
+.score-display {
+    width: 100%;
+    border: 2px solid black;
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+    border-collapse: collapse;
+}
+
+.score-display th, .score-display td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+  border: 2px solid black;
+  
+}
+
+.score-display th {
+  font-weight: bold;
+  background-color: #A8333A;
+}
+
+.score-display .tdplayers {
+    background-color: #B66C50;
+}
+
+.score-display tbody {
+    background-color: #D3D3D3;
+}
+
+.score-display tfoot {
+  font-weight: bold;
+  
+}
+
+.score-display tfoot td {
+    background-color: #1A936F;
+  text-align: center;
+  padding: 15px;
+}
+
+.ballsizing {
+    width: 50px;
+    height: 50px;
+    margin-right: 2rem;
+    margin-top: 2rem;
+}
