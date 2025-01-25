@@ -17,14 +17,14 @@ function ScoreDisplay({ score, player1, player2 }: ScoreDisplayProps) {
     return <div>Loading score...</div>;
   }
 
-    function parseCurrentScore({ currentGame }: ScoreDisplayProps["score"]) {
-    if (currentGame === "Game Player 1") return ["0", "0"];
-    if (currentGame === "Game Player 2") return ["0", "0"];
-    if (currentGame === "40 - 40") return ["40", "40"];
-    if (currentGame === "AV - 40") return ["AV", "40"];
-    if (currentGame === "40 - AV") return ["40", "AV"];
-    return currentGame.split(" - ");
-  };
+   function parseCurrentScore({ currentGame }: ScoreDisplayProps["score"]) {
+  if (currentGame === "Game Player 1") return ["0", "0"];
+  if (currentGame === "Game Player 2") return ["0", "0"];
+  if (currentGame === "40 - 40") return ["40", "40"];
+  if (currentGame === "AV - 40") return ["AV", "-"]; // Joueur 1 a l'avantage
+  if (currentGame === "40 - AV") return ["-", "AV"]; // Joueur 2 a l'avantage
+  return currentGame.split(" - ");
+}
 
   const [player1CurrentScore, player2CurrentScore] = parseCurrentScore(score);
   const [player1SetGames, player2SetGames] = score.currentSetGames;
