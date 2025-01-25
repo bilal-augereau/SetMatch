@@ -1,5 +1,7 @@
 SetMatch 🎾
 
+![Capture d'écran 2025-01-25 191759 (1)](https://github.com/user-attachments/assets/61ffa18b-50c7-4886-8ac6-81491f6bc5b4)
+
 SetMatch is a web application that allows users to simulate a tennis match, track the score, and view detailed stats such as the number of points played, sets won, and the current game progress.
 
 Features
@@ -44,14 +46,13 @@ Advantage games.
 
 How to Run the Project
 
-Prerequisites
+Prerequisites:
 
 Node.js and npm installed.
 
 Clone the repository:
 
-git clone
-cd SetMatch
+git clone / cd SetMatch
 
 Run the Backend
 
