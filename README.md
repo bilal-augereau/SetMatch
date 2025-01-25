@@ -43,23 +43,32 @@ Tie-breaks for sets at 6-6.
 Advantage games.
 
 How to Run the Project
+
 Prerequisites
+
 Node.js and npm installed.
+
 Clone the repository:
+
 git clone
 cd SetMatch
 
 Run the Backend
+
 cd server
+
 Install dependencies:
 npm install
+
 Start the backend server:
 npm run dev
 
 Run the Frontend
 cd client
+
 Install dependencies:
 npm install
+
 Start the frontend app:
 npm run dev
 
