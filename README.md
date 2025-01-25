@@ -50,6 +50,9 @@ Match Results:
 Future Improvements
 
 🏆 Match History: Save match results and replay them.
+
 📈 Statistics Dashboard: Display player statistics such as win rates and average set scores.
+
 🌐 Multiplayer Mode: Allow two users to play a live match against each other.
+
 Feel free to personalize this further with specific installation commands or additional features unique to your project! 😊
