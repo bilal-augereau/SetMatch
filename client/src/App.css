@@ -51,7 +51,6 @@ button {
 button:disabled {
   background-color: #A7C9BA;
   color: #FFFFFF; 
-  cursor: not-allowed;
   opacity: 0.7;
 }
 
@@ -65,6 +64,7 @@ button:disabled {
 #cal-color {
     background-color: darkblue;
 }
+
 
 #root {
   padding: 1rem;
