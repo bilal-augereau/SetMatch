@@ -6,35 +6,35 @@ SetMatch is a web application that allows users to simulate a tennis match, trac
 
 Features
 
-🎾 Simulate a Match: Generate random tennis points between two players based on their skill levels.
-📊 Track Scoring: Displays the score for each set, the total sets won, and the current game.
-🛠️ Backend Logic: The scoring logic, based on official tennis rules (e.g., sets, tie-breaks, advantage games), is handled in the backend.
-🌟 Player Customization: Input player names, skill levels (1-10), and the number of points to simulate.
+  🎾 Simulate a Match: Generate random tennis points between two players based on their skill levels.
+  📊 Track Scoring: Displays the score for each set, the total sets won, and the current game.
+  🛠️ Backend Logic: The scoring logic, based on official tennis rules (e.g., sets, tie-breaks, advantage games), is handled in the backend.
+  🌟 Player Customization: Input player names, skill levels (1-10), and the number of points to simulate.
 
 💻 Tech Stack:
 
-Frontend: React + TypeScript for a modern, type-safe user interface.
-Backend: Node.js + Express for robust API endpoints handling the tennis scoring logic.
+  Frontend: React + TypeScript for a modern, type-safe user interface.
+  Backend: Node.js + Express for robust API endpoints handling the tennis scoring logic.
 
 How It Works
 
-Input Players: Enter the names and skill levels of Player 1 and Player 2.
-Generate Points: Randomly simulate points based on player skill levels.
+  Input Players: Enter the names and skill levels of Player 1 and Player 2.
+  Generate Points: Randomly simulate points based on player skill levels.
 
 View Results:
 
-See the total points played.
-Track the score for each set.
-Monitor the current game progress (including advantage, deuce, and tie-break situations).
-Backend Processing: The backend computes the match results and sends them to the frontend for visualization.
+  See the total points played.
+  Track the score for each set.
+  Monitor the current game progress (including advantage, deuce, and tie-break situations).
+  Backend Processing: The backend computes the match results and sends them to the frontend for visualization.
 
 Tech Stack
 
-Frontend
+  Frontend
 
-React: Dynamic, component-based UI.
-TypeScript: Ensures type safety and better code readability.
-CSS: Styled for simplicity and clarity.
+    React: Dynamic, component-based UI.
+    TypeScript: Ensures type safety and better code readability.
+    CSS: Styled for simplicity and clarity.
 
 Backend
 
@@ -53,6 +53,8 @@ Node.js and npm installed.
 Clone the repository:
 
 git clone / cd SetMatch
+
+Copy .env.sample to .env
 
 Run the Backend
 
