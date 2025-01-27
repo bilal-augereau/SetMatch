@@ -5,7 +5,7 @@ import Header from "./components/Header.tsx";
 import MatchForm from "./components/MatchForm.tsx";
 import PointsList from "./components/PointsList.tsx";
 import ScoreDisplay from "./components/ScoreDisplay.tsx";
-import { sendPointsToBackend } from "./services/api.ts"
+import { startPoints } from "./services/api.ts"
 
 function App() {
   
@@ -22,7 +22,7 @@ const [player2, setPlayer2] = useState<string>("");
 
    const handleSendPoints = async () => {
     try {
-      const result = await sendPointsToBackend(points, player1, player2);
+      const result = await startPoints(points, player1, player2);
       setScore(result);
     } catch (error) {
       console.error("Error sending points:", error);
@@ -30,7 +30,7 @@ const [player2, setPlayer2] = useState<string>("");
   };
 
   return (
-    <div>
+    <>
       <Header/>
       <MatchForm onGeneratePoints={handleGeneratePoints} />
       <button id="cal-color" onClick={handleSendPoints} disabled={points.length === 0}>
@@ -47,7 +47,7 @@ const [player2, setPlayer2] = useState<string>("");
       <img className='ballsizing' src={ball} alt="ball" />
       <PointsList points={points} player1={player1} player2={player2}/>
      </div>
-    </div>
+    </>
   );
 };
 

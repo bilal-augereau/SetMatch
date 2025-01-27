@@ -1,14 +1,19 @@
 import express from "express";
-import { calculateTennisSets } from "./modules/item/Score/CalSets";
+import { calculateTennisSets } from "./modules/Score/CalSets";
 
 const router = express.Router();
 
 router.post("/score", (req, res) => {
-  console.log("Request body received:", req.body); 
 
   const { points, player1, player2 } = req.body;
 
-  if (!Array.isArray(points) || typeof player1 !== "string" || typeof player2 !== "string") {
+  if (
+  !Array.isArray(points) || 
+  typeof player1 !== "string" || 
+  player1.trim() === "" ||
+  typeof player2 !== "string" || 
+  player2.trim() === ""
+) {
     return res.status(400).json({ error: "Invalid data format" });
   }
 

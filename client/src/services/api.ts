@@ -1,4 +1,4 @@
-export const sendPointsToBackend = async (
+export const startPoints = async (
   points: string[],
   player1: string,
   player2: string
