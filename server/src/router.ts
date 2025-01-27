@@ -1,9 +1,9 @@
-import express from "express";
+import express, { Request, Response } from "express";
 import { calculateTennisSets } from "./modules/Score/CalSets";
 
 const router = express.Router();
 
-router.post("/score", (req, res) => {
+router.post("/score", (req: Request, res: Response) => {
 
   const { points, player1, player2 } = req.body;
 
@@ -14,7 +14,8 @@ router.post("/score", (req, res) => {
   typeof player2 !== "string" || 
   player2.trim() === ""
 ) {
-    return res.status(400).json({ error: "Invalid data format" });
+    res.status(400).json({ error: "Invalid data format" });
+    return;
   }
 
   try {
