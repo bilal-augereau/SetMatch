@@ -1,85 +1,93 @@
-SetMatch 🎾
+# SetMatch 🎾
 
 ![Capture d'écran 2025-01-25 191759 (1)](https://github.com/user-attachments/assets/61ffa18b-50c7-4886-8ac6-81491f6bc5b4)
 
 SetMatch is a web application that allows users to simulate a tennis match, track the score, and view detailed stats such as the number of points played, sets won, and the current game progress.
 
-Features
+## Features
 
-  🎾 Simulate a Match: Generate random tennis points between two players based on their skill levels.
-  📊 Track Scoring: Displays the score for each set, the total sets won, and the current game.
-  🛠️ Backend Logic: The scoring logic, based on official tennis rules (e.g., sets, tie-breaks, advantage games), is handled in the backend.
-  🌟 Player Customization: Input player names, skill levels (1-10), and the number of points to simulate.
+- 🎾 Simulate a Match: Generate random tennis points between two players based on their skill levels.
+- 📊 Track Scoring: Displays the score for each set, the total sets won, and the current game.
+- 🛠️ Backend Logic: The scoring logic, based on official tennis rules (e.g., sets, tie-breaks, advantage games), is handled in the backend.
+- 🌟 Player Customization: Input player names, skill levels (1-10), and the number of points to simulate.
 
-💻 Tech Stack:
+## 💻 Tech Stack:
 
-  Frontend: React + TypeScript for a modern, type-safe user interface.
-  Backend: Node.js + Express for robust API endpoints handling the tennis scoring logic.
+- Frontend: React + TypeScript for a modern, type-safe user interface.
+- Backend: Node.js + Express for robust API endpoints handling the tennis scoring logic.
 
-How It Works
+## How It Works
 
-  Input Players: Enter the names and skill levels of Player 1 and Player 2.
-  Generate Points: Randomly simulate points based on player skill levels.
+- Input Players: Enter the names and skill levels of Player 1 and Player 2.
+- Generate Points: Randomly simulate points based on player skill levels.
 
-View Results:
+## View Results:
 
-  See the total points played.
-  Track the score for each set.
-  Monitor the current game progress (including advantage, deuce, and tie-break situations).
-  Backend Processing: The backend computes the match results and sends them to the frontend for visualization.
+- See the total points played.
+- Track the score for each set.
+- Monitor the current game progress (including advantage, deuce, and tie-break situations).
+- Backend Processing: The backend computes the match results and sends them to the frontend for visualization.
 
-Tech Stack
+## Tech Stack
 
-  Frontend
+ ### Frontend
+- React: Dynamic, component-based UI.
+- TypeScript: Ensures type safety and better code readability.
+- CSS: Styled for simplicity and clarity.
 
-    React: Dynamic, component-based UI.
-    TypeScript: Ensures type safety and better code readability.
-    CSS: Styled for simplicity and clarity.
+### Backend
 
-Backend
-
-Node.js + Express: Handles requests, processes tennis scoring logic, and delivers JSON responses.
-Tennis Scoring Logic: Implements official tennis rules:
+- Node.js + Express: Handles requests, processes tennis scoring logic, and delivers JSON responses.
+- Tennis Scoring Logic: Implements official tennis rules:
 Best of 5 sets.
 Tie-breaks for sets at 6-6.
 Advantage games.
 
-How to Run the Project
+## How to Run the Project
 
-Prerequisites:
+### Prerequisites:
 
-Node.js and npm installed.
+- Node.js and npm installed.
 
-Clone the repository:
-
-git clone / cd SetMatch
-
+- Clone the repository:
+```sh 
+git clone
+cd SetMatch
+```
 Copy .env.sample to .env
 
-Run the Backend
-
+- Run the Backend
+```sh 
 cd server
-
-Install dependencies:
+```
+- Install dependencies:
+```sh 
 npm install
-
-Start the backend server:
+```
+- Start the backend server:
+```sh 
 npm run dev
-
-Run the Frontend
+```
+- Run the Frontend
+```sh 
 cd client
+```
 
-Install dependencies:
+- Install dependencies:
+```sh 
 npm install
+```
 
-Start the frontend app:
+- Start the frontend app:
+```sh 
 npm run dev
+```
 
-Preview
+- Preview
 Input Player Names and Levels:
 Match Results:
 
-Future Improvements
+## Future Improvements
 
 🏆 Match History: Save match results and replay them.
 
