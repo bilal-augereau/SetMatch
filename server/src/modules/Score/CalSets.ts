@@ -1,9 +1,4 @@
-interface MatchResult {
-  sets: [number, number][]; 
-  currentGame: string;
-  currentSetGames: [number, number];
-  winner: string | null;
-}
+import type { MatchResult } from "../../types/MatchType.ts";
 
 export const calculateTennisSets = (points: string[]): MatchResult => {
   let player1Games = 0;
@@ -12,8 +7,8 @@ export const calculateTennisSets = (points: string[]): MatchResult => {
   let player2Points = 0;
   let player1Sets = 0;
   let player2Sets = 0;
-  let sets: [number, number][] = [];
   let isTieBreak = false;
+  const sets: [number, number][] = [];
 
   const resetGame = () => {
     player1Points = 0;
@@ -27,36 +22,47 @@ export const calculateTennisSets = (points: string[]): MatchResult => {
     } else {
       player2Sets++;
     }
-    
+
     player1Games = 0;
     player2Games = 0;
     isTieBreak = false;
   };
 
   const calculateGameScore = (): string => {
-  const scoreMap = [0, 15, 30, 40];
-  
-  // game win
-  if (player1Points >= 4 && player1Points - player2Points >= 2) {
-    player1Games++;
-    resetGame();
-    return "Game Player 1";
-  } else if (player2Points >= 4 && player2Points - player1Points >= 2) {
-    player2Games++;
-    resetGame();
-    return "Game Player 2";
-  }
+    const scoreMap = [0, 15, 30, 40];
 
-  // advantage scenarios
-  if (player1Points >= 3 && player2Points >= 3) {
-    if (player1Points === player2Points) return "40 - 40";
-    if (player1Points > player2Points) return "AV - 40";
-    return "40 - AV";
-  }
+    const pointDifference = Math.abs(player1Points - player2Points);
+    // Game win scenarios
+    if (
+      player1Points >= 4 &&
+      pointDifference >= 2 &&
+      player1Points > player2Points
+    ) {
+      player1Games++;
+      resetGame();
+      return "Game Player 1";
+    }
 
-  // scoring without advantage
-  return `${scoreMap[player1Points] || 0} - ${scoreMap[player2Points] || 0}`;
-};
+    if (
+      player2Points >= 4 &&
+      pointDifference >= 2 &&
+      player2Points > player1Points
+    ) {
+      player2Games++;
+      resetGame();
+      return "Game Player 2";
+    }
+
+    // Advantage scenarios
+    if (player1Points >= 3 && player2Points >= 3) {
+      if (player1Points === player2Points) return "40 - 40";
+      if (player1Points > player2Points) return "AV - 40";
+      return "40 - AV";
+    }
+
+    // Scoring without advantage
+    return `${scoreMap[player1Points] || 0} - ${scoreMap[player2Points] || 0}`;
+  };
 
   const calculateTieBreak = (): string => {
     if (player1Points >= 7 && player1Points - player2Points >= 2) {
@@ -64,7 +70,8 @@ export const calculateTennisSets = (points: string[]): MatchResult => {
       isTieBreak = false;
       resetGame();
       return "Tie-break Player 1";
-    } else if (player2Points >= 7 && player2Points - player1Points >= 2) {
+    }
+    if (player2Points >= 7 && player2Points - player1Points >= 2) {
       player2Games++;
       isTieBreak = false;
       resetGame();
@@ -108,9 +115,10 @@ export const calculateTennisSets = (points: string[]): MatchResult => {
   }
 
   return {
-  sets,
-  currentGame: calculateGameScore(),
-  currentSetGames: [player1Games, player2Games],
-  winner: player1Sets === 3 ? "player1" : player2Sets === 3 ? "player2" : null,
-};
+    sets,
+    currentGame: calculateGameScore(),
+    currentSetGames: [player1Games, player2Games],
+    winner:
+      player1Sets === 3 ? "player1" : player2Sets === 3 ? "player2" : null,
+  };
 };

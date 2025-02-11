@@ -17,8 +17,7 @@ function PointsList({ points, player1, player2 }: PointsListProps) {
               fontWeight: "bold",
             }}
           >
-            Point {index + 1} : remporté par{" "}
-            {point === "player1" ? player1 : player2}
+            Point {index + 1} : won by {point === "player1" ? player1 : player2}
           </li>
         ))}
       </ul>
